@@ -1,3 +1,5 @@
+//@version=5
+
 indicator("MACD-Liwei 03", overlay = true)
 var My_Color = color.red
 [macdLine, signalLine, histLine] = ta.macd(close, 12, 26, 9)
@@ -6,3 +8,4 @@ MACD_Crossover = ta.crossover(macdLine,signalLine)
 plotshape(MACD_Crossover, title="Buy", text="Buy",  location = location.belowbar, style = shape.labelup, size = size.tiny, color = color.lime, textcolor = color.black)
 MACD_Crossunder = ta.crossunder(macdLine,signalLine)
 plotshape(MACD_Crossunder, title="Sell",  text="Sell",  location = location.abovebar, style = shape.labeldown, size = size.auto, color = color.red, textcolor = color.black)
+
